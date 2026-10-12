@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Edu+QLD+Hand:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Varela+Round&display=swap');
+@import "tailwindcss";
+
+body {@apply bg-secondary-cream}
+
+@theme{
+    --font-fira-sans: 'Fira Sans', sans-serif;
+    --font-edu: "Edu QLD Hand", cursive;
+    --font-jetbrains-mono: "JetBrains Mono", monospace;
+    --font-valera-round: "Valera Round", cursive;
+    --font-bbh-bartle: "BBH Bartle";
+
+    --color-bg-offwhite: oklch(0.9564 0.0025 48.72);
+    --color-primary-navy-blue: oklch(0.4137 0.0883 249.1);
+    --color-ascent-baby-blue: oklch(0.8492 0.0514 220.2);
+    --color-secondary-cream: oklch(0.9342 0.0373 79.1);
+}
+
+html, body{
+    height: 100%;
+}
+
+
+@utility font-title{@apply text-6xl;}
+@utility font-subtitle{@apply text-2xl sm:text-4xl xl:text-5xl;}
+@utility font-text {@apply text-xl;}
+@utility img-card{@apply h-full w-full max-md:h-50 rounded-2xl;}
+
+h1 {@apply font-title font-fira-sans text-bg-offwhite;}
+h3 {@apply font-subtitle font-jetbrains-mono text-bg-offwhite;}
+p {@apply font-text font-edu text-bg-offwhite;}
+
+/* TODO: implement dark mode in the classes */
+
+@utility btn{@apply z-50 font-fira-sans ring-2 rounded-3xl px-2 py-0.5 font-bold ring-bg-offwhite shadow-lg shadow-primary-navy-blue text-bg-offwhite bg-primary-navy-blue/90}
+@utility btn-hollow{@apply z-50 font-fira-sans ring-2 rounded-3xl px-2 py-0.5 font-bold ring-offset-white shadow-lg  text-bg-offwhite bg-ascent-baby-blue/90}
+
+@utility card3{@apply w-11/12 h-full md:h-auto md:max-h-[33.33%] rounded-2xl shadow-lg shadow-primary-navy-blue my-2 p-0.5 md:p-1 md:my-3 bg-primary-navy-blue 
+flex justify-center items-center relative}
+@utility section{ @apply h-auto w-dvw md:h-dvh md:w-dvw flex flex-row items-center justify-center;} 
+
+
+
