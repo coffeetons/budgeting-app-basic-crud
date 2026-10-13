@@ -2,55 +2,73 @@ import React from 'react';
 import { Navigate, useNavigate } from 'react-router-dom'
 import { Auth } from '../auth';
 
-const Card = (props) =>
-{
-  const {string} = props;
-          return(<>
-          <div className='card3 overflow-auto'>
-            <div className='absolute top-4 left-0 pl-3 flex flex-col h-max items-center content-center w-full z-10'>
-            <h3 className='text-secondary-cream! flex h-max  justify-center content-center font-bold md:py-2 md:px-4 md:my-2 md:h-1/2'>{string} </h3>
-           
-            </div>
-          <img className='img-card' src='https://picsum.photos/1280/1280/' ></img>
+const Card = (props) => {
+  const { string } = props;
+  return (
+    <>
+      {/* Adicionado h-48 md:h-1/3 para garantir que os cards dividam o espaço igualmente sem quebrar */}
+      <div className='card3 overflow-hidden h-48 md:h-1/3 w-full relative flex justify-center items-center rounded-2xl shadow-lg shadow-primary-navy-blue/30'>
+        {/* Ajustado o container de texto interno para garantir centralização e leitura perfeita */}
+        <div className='absolute inset-0 bg-primary-navy-blue/40 flex items-center justify-center p-4 z-10 rounded-2xl'>
+          <h3 className='text-secondary-cream! font-bold text-center text-xl md:text-2xl font-subtitle tracking-wide'>
+            {string}
+          </h3>
         </div>
-          </>
-          )
-}
-
-
+        {/* Imagem preenchendo o bloco do card de forma limpa */}
+        <img className='img-card object-cover w-full h-full rounded-2xl' src='https://picsum.photos/1280/1280/' alt='card visual' />
+      </div>
+    </>
+  );
+};
 
 const Homepage = () => {
   const navigate = useNavigate();
-  const goToAuth = () => {navigate('/auth')}
+  const goToAuth = () => { navigate('/auth') }
 
-  return (<>
-    <section className='section'>
+  return (
+    <>
+      <section className='section bg-secondary-cream'>
+        {/* Ajustado os paddings e alinhamentos gerais para conversar com as páginas Finance e Auth */}
+        <div className='flex flex-col md:flex-row h-full w-full p-6 md:p-12 gap-8 items-center justify-center'>
+
+          {/* COLUNA DA ESQUERDA: TEXTOS PRINCIPAIS E BOTÃO */}
+          <div className='h-auto md:h-full w-full md:w-3/5 flex flex-col justify-center items-start gap-6'>
+            <div className='flex flex-col gap-3 w-full text-left'>
+              <h1 className='text-3xl! md:text-5xl! font-bbh-bartle! text-primary-navy-blue! leading-tight'>
+                Your Personal Financial Advisor
+              </h1>
+              <h3 className='text-lg! md:text-xl! text-primary-navy-blue! opacity-90 font-medium'>
+                ask away, your investments, budgeting, expenses
+              </h3>
+              <h3 className='text-lg! md:text-xl! text-primary-navy-blue! opacity-90 font-medium'>
+                we know everything
+              </h3>
+            </div>
+            
+            {/* Alinhamento do botão com a fonte correta do seu tema corporativo */}
+            <div className='w-full md:w-1/2 mt-4'>
+              <button 
+                className='btn w-full py-3 text-center font-bbh-bartle!' 
+                onClick={goToAuth}
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+
+          {/* COLUNA DA DIREITA: CARDS INSPIRACIONAIS */}
+          <div className='h-full w-full md:w-2/5 flex flex-col items-center justify-center gap-4 p-2'>
+            <Card string='Manage Your Finances Today' />
+            <Card string='The Best Way To Handle Your Money' />
+          </div>
+
+        </div>  
+      </section>
       
-      <div className='flex flex-col md:flex-row h-full w-full p-2 bg-secondary-cream'>
+      <section className='section bg-offwhite'>
+      </section>
+    </>
+  );
+};
 
-       <div className='h-auto gap-6 md:gap-0 md:h-full md:w-3/4 w-full flex flex-col justify-center content-center md:items-center md:justify-around pr-2 mr-3 ml-0 '>
-        <div className='h-1/2 w-full flex flex-col mx-4 md:ml-7.5 mt-8 justify-center content-center '>
-          <h1 className='text-2xl! md:text-4xl! font-bbh-bartle! text-primary-navy-blue!'>Your Personal Financial Advisor</h1>
-            <h3 className='md:ml-2 text-xl!  text-primary-navy-blue!'>ask away, your investments, budgeting, expenses</h3>
-            <h3 className='md:ml-2 text-xl!  text-primary-navy-blue!'>we know everything</h3>
-        </div>
-        <div className='h-auto md:h-full md:w-3/4 w-full flex justify-around columns-2 content-around pt-4 md:justify-start md:items-start pr-2 mr-3 ml-0 '>
-          <button className='btn md:h-auto md:w-full w-1/2 py-2 font-jetbrains-mono' onClick={goToAuth}>Get Started </button>
-        
-        </div>
-       </div>
-
-       <div className='h-full w-auto md:w-full md:max-w-1/2 flex flex-col items-center justify-around px-2 py-3 md:mx-4'>
-          <Card string='Manage Your Finances Today'/>
-          <Card string='The Best Way To Handle Your Money'/>
-       </div>
-
-      </div>  
-    </section>
-    <section className='section bg-offwhite'>
-    </section>
-  </>
-  )
-}
-
-export {Homepage, Card}
+export { Homepage, Card };

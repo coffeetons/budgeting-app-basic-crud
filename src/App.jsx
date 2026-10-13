@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Homepage, Auth  } from './pages'
+import { Homepage, Auth, Finance  } from './pages'
 import { } from './assets'
 
 import './App.css'
@@ -13,6 +13,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Homepage/>}/>
     <Route path='/auth' element={<Auth/>}/>
+    <Route path ='/finance' element={<Finance/>}/>
   </Routes>
   </>
   )

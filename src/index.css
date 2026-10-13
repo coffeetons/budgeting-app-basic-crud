@@ -30,14 +30,29 @@ h1 {@apply font-title font-fira-sans text-bg-offwhite;}
 h3 {@apply font-subtitle font-jetbrains-mono text-bg-offwhite;}
 p {@apply font-text font-edu text-bg-offwhite;}
 
+
 /* TODO: implement dark mode in the classes */
 
-@utility btn{@apply z-50 font-fira-sans ring-2 rounded-3xl px-2 py-0.5 font-bold ring-bg-offwhite shadow-lg shadow-primary-navy-blue text-bg-offwhite bg-primary-navy-blue/90}
-@utility btn-hollow{@apply z-50 font-fira-sans ring-2 rounded-3xl px-2 py-0.5 font-bold ring-offset-white shadow-lg  text-bg-offwhite bg-ascent-baby-blue/90}
+@utility btn{@apply z-50 px-2 font-bold shadow-lg shadow-primary-navy-blue text-bg-offwhite bg-primary-navy-blue py-1 text-xl rounded-sm flex-1 font-bbh-bartle!}
+@utility btn-hollow{@apply z-50 px-2 font-bold shadow-lg shadow-primary-navy-blue text-primary-navy-blue bg-transparent ring-3 ring-primary-navy-blue py-1 text-xl rounded-sm flex-1 font-bbh-bartle! }
+@utility txtbox{@apply text-center text-2xl border-b-2 border-b-bg-offwhite bg-bg-offwhite rounded-sm}
 
 @utility card3{@apply w-11/12 h-full md:h-auto md:max-h-[33.33%] rounded-2xl shadow-lg shadow-primary-navy-blue my-2 p-0.5 md:p-1 md:my-3 bg-primary-navy-blue 
 flex justify-center items-center relative}
 @utility section{ @apply h-auto w-dvw md:h-dvh md:w-dvw flex flex-row items-center justify-center;} 
+
+@utility bg-geometric-pattern {
+    /* Usando os códigos de cores hexadecimais exatos do seu tema */
+    background-color: #eeebe3; /* Cor correspondente ao seu secondary-cream */
+    opacity: 0.9;
+    background-image:  
+        radial-gradient(25% 25% at 25% 25%, #505c83 99%, transparent 101%), 
+        radial-gradient(25% 25% at 25% 25%, #505c83 99%, transparent 101%), 
+        radial-gradient(50% 50%, #eeebe3 98%, transparent), 
+        repeating-conic-gradient(#eeebe3 0 25%, #505c83 0 50%);
+    background-position: 50px 50px, 0 0, 0 0, 25px 0;
+    background-size: 100px 100px, 100px 100px, 50px 50px, 100px 50px;
+}
 
 
 
