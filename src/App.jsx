@@ -3,18 +3,20 @@ import { Homepage, Auth, Finance  } from './pages'
 import { } from './assets'
 
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
 
 function App() {
   const [count, setCount] = useState(0)
   return(
   <>
-  <Routes>
-    <Route path="/" element={<Homepage/>}/>
-    <Route path='/auth' element={<Auth/>}/>
-    <Route path ='/finance' element={<Finance/>}/>
-  </Routes>
+  <HashRouter>
+    <Routes>
+      <Route path="/" element={<Homepage/>}/>
+      <Route path='/auth' element={<Auth/>}/>
+      <Route path ='/finance' element={<Finance/>}/>
+    </Routes>
+  </HashRouter>
   </>
   )
 

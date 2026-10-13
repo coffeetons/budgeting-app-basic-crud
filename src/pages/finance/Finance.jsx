@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as Recharts from 'recharts';
 
 // IMPORTAÇÕES CORRIGIDAS: Subindo duas pastas (../../) para achar a raiz do src
 import { useAddExpense } from '../../firebaseLogic';

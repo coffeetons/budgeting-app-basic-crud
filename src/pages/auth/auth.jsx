@@ -44,7 +44,7 @@ export const Auth = () => {
     return(<>
         {/* Substituída a classe antiga 'bg-primary-navy-blue' pela sua nova estampa geométrica */}
         <section className="section bg-geometric-pattern h-dvh flex flex-col md:flex-row justify-center items-center">
-            <div className="md:h-dvh md:w-1/2 h-0 w-0"></div>
+            <div className="h-0 w-0"></div>
             
             {/* Login Card centralizado flutuando sobre o padrão geométrico */}
             <div className="login-card bg-ascent-baby-blue w-11/12 md:h-5/6 md:w-1/3 px-6 py-8 flex flex-col justify-center items-center text-center rounded-2xl shadow-xl shadow-primary-navy-blue/50">
